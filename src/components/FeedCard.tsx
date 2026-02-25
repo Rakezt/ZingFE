@@ -6,8 +6,7 @@ interface FeedProps {
 
 const FeedCard = ({ feed }: FeedProps) => {
   const { firstName, lastName, photoUrl, age, gender, about, interest } = feed;
-  console.log('age', age);
-  console.log('gender', gender);
+
   return (
     <div className='card bg-base-300 w-96 shadow-sm'>
       <figure>
