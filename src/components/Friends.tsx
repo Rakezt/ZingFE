@@ -25,7 +25,7 @@ const Friends = () => {
   useEffect(() => {
     fetchConnections();
   }, []);
-  console.log(connection);
+  // console.log(connection);
   if (!connection || connection.length === 0)
     return (
       <div className='text-center mt-20 text-gray-400 text-lg'>

@@ -23,3 +23,8 @@ export interface FeedData {
   about?: string;
   interest?: string[];
 }
+export interface RequestData {
+  _id: string;
+  status: 'interested' | 'ignore' | 'accepted' | 'rejected';
+  fromUserId: UserState;
+}
