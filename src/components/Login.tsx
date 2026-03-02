@@ -38,7 +38,7 @@ const Login = () => {
         { withCredentials: true },
       );
       dispatch(addUser(res.data.data));
-      navigate('/');
+      navigate('/profile');
     } catch (error) {
       if (error instanceof axios.AxiosError) {
         setError(error.response?.data);

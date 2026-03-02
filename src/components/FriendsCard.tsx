@@ -22,6 +22,7 @@ const FriendsCard = ({
       <figure className='p-7'>
         <img
           src={photoUrl}
+          loading='lazy'
           alt='Profile pic'
           className='w-16 h-16 rounded-full object-cover ring ring-primary ring-offset-2'
         />

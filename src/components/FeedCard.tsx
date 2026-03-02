@@ -15,6 +15,7 @@ const FeedCard = ({ feed, showActions, onInterest, onIgnore }: FeedProps) => {
       <figure className='relative h-[420px] w-full'>
         <img
           src={photoUrl}
+          loading='lazy'
           alt='profile'
           className='w-full h-full object-cover'
         />
