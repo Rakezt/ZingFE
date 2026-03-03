@@ -28,7 +28,7 @@ const NavBar = () => {
   }, [location.pathname]);
 
   return (
-    <div className='navbar bg-base-300 shadow-sm'>
+    <div className='navbar bg-base-300 shadow-sm fixed top-0 w-full z-50'>
       <div className='flex-1'>
         <Link to='/' className='btn btn-ghost bg-accent text-xl'>
           Zing
