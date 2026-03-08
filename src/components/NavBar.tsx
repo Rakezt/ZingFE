@@ -50,30 +50,27 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={-1}
-              className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow'
+              className='menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow items-end'
             >
               <li>
-                <Link to='/' className='justify-between'>
-                  Home
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/profile'>
+                  Profile
                   {/* <span className='badge'>Edit</span> */}
                 </Link>
               </li>
               <li>
-                <Link to='/profile' className='justify-between'>
-                  Profile
-                  <span className='badge'>Edit</span>
-                </Link>
+                <Link to='/friends'>Friends</Link>
               </li>
               <li>
-                <Link to='/friends'>
-                  Friends <span className='badge'>List</span>
-                </Link>
+                <Link to='/requests'>Request</Link>
               </li>
               <li>
-                <Link to='/requests'>
-                  Request <span className='badge'>Received</span>
-                </Link>
+                <Link to='/premium'>Go Premium</Link>
               </li>
+
               <li>
                 <a onClick={handleLogout}>Logout</a>
               </li>

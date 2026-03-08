@@ -5,12 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addConnection } from '../utils/connectionSlice';
 import type { UserState } from '../utils/types';
 import FriendsCard from './FriendsCard';
+import { useNavigate } from 'react-router-dom';
 interface RootState {
   connection: UserState[];
 }
 
 const Friends = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const connection = useSelector((state: RootState) => state.connection);
   const fetchConnections = async () => {
     try {
@@ -21,6 +23,9 @@ const Friends = () => {
     } catch (error) {
       console.error(error);
     }
+  };
+  const handleChat = (id: string) => {
+    navigate(`/chat/${id}`);
   };
   useEffect(() => {
     fetchConnections();
@@ -37,8 +42,12 @@ const Friends = () => {
     <div className='max-w-5xl mx-auto px-4 mt-10'>
       <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-6'>
         {connection.map((user) => (
-          <div>
-            <FriendsCard key={user._id} user={user} />
+          <div key={user._id}>
+            <FriendsCard
+              user={user}
+              showChat={true}
+              onChat={() => user._id && handleChat(user._id)}
+            />
           </div>
         ))}
       </div>

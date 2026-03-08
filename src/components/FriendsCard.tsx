@@ -5,12 +5,16 @@ interface FriendProps {
   showActions?: boolean;
   onAccept?: () => void;
   onReject?: () => void;
+  showChat?: boolean;
+  onChat?: () => void;
 }
 const FriendsCard = ({
   user,
   showActions,
   onAccept,
   onReject,
+  showChat,
+  onChat,
 }: FriendProps) => {
   const { firstName, lastName, age, gender, photoUrl, about, interest } = user;
   return (
@@ -51,16 +55,25 @@ const FriendsCard = ({
             </div>
           </div>
         )}
-        {showActions && (
-          <div className='card-actions mt-4'>
-            <button className='btn btn-secondary' onClick={onAccept}>
-              Accept
-            </button>
-            <button className='btn btn-accent' onClick={onReject}>
-              Rejected
-            </button>
-          </div>
-        )}
+        <div className='card-actions mt-4'>
+          {showActions && (
+            <div>
+              <button className='btn btn-secondary' onClick={onAccept}>
+                Accept
+              </button>
+              <button className='btn btn-accent' onClick={onReject}>
+                Rejected
+              </button>
+            </div>
+          )}
+          {showChat && (
+            <div>
+              <button className='btn btn-accent' onClick={onChat}>
+                Chat
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
