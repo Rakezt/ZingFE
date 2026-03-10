@@ -54,8 +54,8 @@ const EditProfile = ({ user }: EditProfileProps) => {
   return (
     <>
       <div className='flex justify-center py-5 '>
-        <div className='flex gap-16 items-start'>
-          <div className='card card-border bg-base-300 w-96  '>
+        <div className='flex flex-col lg:flex-row gap-8 items-center lg:items-start'>
+          <div className='card card-border bg-base-300 w-full max-w-md'>
             <div className='card-body'>
               <h2 className='card-title justify-center'>Profile</h2>
               <fieldset className='fieldset'>
@@ -157,7 +157,9 @@ const EditProfile = ({ user }: EditProfileProps) => {
               </div>
             </div>
           </div>
-          <FeedCard feed={user} />
+          <div className='w-full max-w-sm'>
+            <FeedCard feed={user} />
+          </div>
           {showToast && (
             <div className='toast toast-top toast-end my-15'>
               <div className='alert alert-success'>

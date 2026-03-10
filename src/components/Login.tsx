@@ -61,7 +61,7 @@ const Login = () => {
         <div className='bg-base-200/70 backdrop-blur-lg shadow-2xl rounded-3xl p-8 border border-base-300'>
           {' '}
           <h2 className='text-3xl font-bold text-center mb-6'>
-            {newUser ? 'Create Account 💘' : 'Welcome Back'}
+            {newUser ? 'Create Account' : 'Welcome Back'}
           </h2>
           {newUser && (
             <>
